@@ -1,0 +1,13 @@
+import pandas as pd
+reviews = [
+    "This product is amazing! I love it.",
+    "Not satisfied with the quality. Needs improvement.",
+    "Highly recommend this product to everyone!",
+    "The customer service was excellent.",
+    "Disappointed with the purchase. Will not buy again."
+]
+data = {'review_text': reviews}
+reviews_df = pd.DataFrame(data)
+reviews_df.to_csv('customer_reviews.csv', index=False)
+
+print("CSV file 'customer_reviews.csv' created with sample review data.")
