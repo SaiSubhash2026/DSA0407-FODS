@@ -1,0 +1,10 @@
+import pandas as pd
+data = {
+    'Product_ID': [1, 2, 3, 1, 2, 3, 4, 5, 1, 2],
+    'Quantity_Sold': [10, 15, 20, 12, 18, 25, 8, 30, 14, 22]
+}
+sales_data = pd.DataFrame(data)
+product_sales = sales_data.groupby('Product_ID')['Quantity_Sold'].sum().reset_index()
+top_5_products = product_sales.sort_values(by='Quantity_Sold', ascending=False).head(5)
+print("Top 5 Products Sold in the Past Month:")
+print(top_5_products)
